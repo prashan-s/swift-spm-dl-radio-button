@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [Unreleased]
+* Remove CocoaPods/Carthage distribution support and migrate package distribution to Swift Package Manager only.
+* Add `Package.swift` with SwiftPM library product targeting `.iOS(.v15)` (intended minimum runtime iOS 15.6).
+
 ## [1.4.12](https://github.com/DavydLiu/DLRadioButton/releases/tag/1.4.12) (04/19/2018)
 * Move selection inversion logic from `setSelect` to `touchUpInside` for multiple selection buttons
 * Break otherButtons retain cycle
