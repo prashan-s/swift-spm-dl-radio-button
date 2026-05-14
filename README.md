@@ -20,11 +20,32 @@ In Xcode:
 4. Select the required version, branch, or commit.
 5. Add the `DLRadioButton` library product to your app target.
 
+
+In `Package.swift` for another project:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/bhashacode/swift-spm-dl-radio-button.git", branch: "work")
+],
+targets: [
+    .target(
+        name: "YourApp",
+        dependencies: [
+            .product(name: "DLRadioButton", package: "swift-spm-dl-radio-button")
+        ]
+    )
+]
+```
+
 If your fork does not yet have a release tag, use branch-based dependency selection (for example, `main`) until you cut your first SPM release.
 
 Minimum supported iOS runtime version: **15.6**.
 
+> Note: This package uses UIKit and must be built with Apple SDKs (Xcode on macOS).
+
 > Note: SwiftPM manifests cannot express iOS 15.6 exactly; `Package.swift` uses `.iOS(.v15)` and runtime support is documented as iOS 15.6.
+
+> Note: If you see `unexpectedly did not find the new dependency in the package graph`, your selected version likely points to a tag that does not contain `Package.swift`. Select the `work` branch (or a commit after SwiftPM migration) or publish a new semantic version tag from this branch.
 
 ## Usage
 
